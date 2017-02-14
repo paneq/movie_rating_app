@@ -1,0 +1,9 @@
+<%= simple_form_for @movie, :html => { :multipart => true } do |f| %>
+	<%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select a category") %>
+	<%= f.input  :title, label: "Movie title" %>
+	<%= f.input  :description %>
+	<%= f.input  :director %>
+	<%= f.input  :movie_length %>
+	<%= f.text_field  :image_url %>
+	<%= f.submit :submit %>
+<% end %>
