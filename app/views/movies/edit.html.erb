@@ -1,10 +1,14 @@
-<h1>Edit Movie</h1>
-<%= simple_form_for @movie, :html => { :multipart => true } do |f| %>
-	<%= f.select :category_id, @categories %>
-	<%= f.input  :title, label: "Movie title" %>
-	<%= f.input  :description %>
-	<%= f.input  :director %>
-	<%= f.input  :movie_length %>
-	<%= f.text_field  :image_url %>
-	<%= f.submit :submit %>
-<% end %>
+<div class="col-md-6 col-md-offset-3">
+	<div class="edit-movie-form">
+		<h1>Edit Movie</h1>
+		<%= simple_form_for @movie, :html => { :multipart => true } do |f| %>
+			<%= f.select :category_id, @categories %>
+			<%= f.input  :title, label: "Movie title" %>
+			<%= f.input  :description %>
+			<%= f.input  :director %>
+			<%= f.input  :movie_length %>
+			<%= f.input  :image_url %>
+			<%= f.button :submit, class: "btn-custom2" %>
+		<% end %>
+	</div>
+</div>

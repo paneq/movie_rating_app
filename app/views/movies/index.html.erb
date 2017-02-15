@@ -2,7 +2,11 @@
 <% if @movies.count == 0 %>
 	<h1>There are no books currently in this category</h1>
 <% else %>
+<div class="row">
 	<% @movies.each do |movie| %>
-		<h1><%= link_to movie.title, movie_path(movie) %></h1>
+	<div class="col-md-3">
+		<%= link_to image_tag(movie.image_url, class: "movie"), movie, class: "movie-index" %>
+	</div>
 	<% end %>
+</di>
 <% end %>

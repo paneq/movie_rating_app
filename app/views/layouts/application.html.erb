@@ -33,16 +33,15 @@
             <% end %>
           </ul>
         </li>
-          <% if user_signed_in? %>
-            <li><%= link_to "Add Movie", new_movie_path %></li>
-          <% end %>
+          <li><%= link_to "Add Movie", new_movie_path %></li>
         </ul>
       </div>
     </nav>
 
   	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
