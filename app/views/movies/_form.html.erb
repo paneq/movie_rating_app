@@ -1,9 +1,11 @@
 <%= simple_form_for @movie, :html => { :multipart => true } do |f| %>
-	<%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select a category") %>
-	<%= f.input  :title, label: "Movie title", placeholder: 'Movie title' %>
-	<%= f.input  :description, placeholder: 'Description' %>
-	<%= f.input  :director, placeholder: 'Director' %>
-	<%= f.input  :movie_length, placeholder: 'Movie length' %>
-	<%= f.input  :image_url, placeholder: 'Image url' %>
+	<%= f.error_notification %>
+  <%= f.association  :category, :prompt => "Select a category" %>
+	<%= f.input  :title, label: "Movie title" %>
+	<%= f.input  :description %>
+	<%= f.input  :director %>
+	<%= f.input  :movie_length %>
+	<%= f.input  :image_url %>
+	<%= f.error  :base %>
 	<%= f.button :submit, class: "btn-custom2" %>
 <% end %>
