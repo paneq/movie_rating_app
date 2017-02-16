@@ -16,5 +16,4 @@ class Movie < ApplicationRecord
 											:multiline => true
 	validates_numericality_of :movie_length, greater_than_or_equal_to: 0
 
-	
 end
