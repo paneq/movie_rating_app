@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-@import url(http://fonts.googleapis.com/css?family=Lora|Ubuntu:300,400,500); 
+@import url(https://fonts.googleapis.com/css?family=Lora|Ubuntu:300,400,500); 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -132,7 +132,7 @@ p.alert, p.notice {
 
 }
 
-.book-links {
+.movie-links {
 
 	.btn-custom {
 		padding: 3px 10px;
@@ -142,7 +142,7 @@ p.alert, p.notice {
 
 }
 
-/* Book styles */
+/* Movie styles */
 
 .movie {
 	height: 350px;
@@ -233,7 +233,7 @@ p.alert, p.notice {
 
 }
 
-/* New Book Form styles */
+/* New Movie Form styles */
 
 .new-movie-form {
 	@include background-tile;
@@ -246,16 +246,16 @@ p.alert, p.notice {
 		margin-bottom: 10px;
 	}
 
-	#book_book_img {
+	#movie_movie_img {
 		margin-bottom: 10px;
 	}
 
 }
 
 
-/* Edit Book Form styles */
+/* Edit Movie Form styles */
 
-.edit-book-form {
+.edit-movie-form {
 
 	@include background-tile;
 
@@ -263,11 +263,11 @@ p.alert, p.notice {
 		margin-top: 0;
 	}
 
-	#book_category_id {
+	#movie_category_id {
 		margin-bottom: 10px;
 	}
 
-	#book_book_img {
+	#movie_movie_img {
 		margin-bottom: 10px;
 	}
 
