@@ -6,6 +6,7 @@
 		<div class="movie-info">
 			<h2 class="movie-title"><%= @movie.title %></h2>
 			<h3 class=movie-director><span>Directed by: </span><%= @movie.director %></h3>
+			<h3 class=movie-director><span>Duration: </span><%= @movie.movie_length %> minutes</h3>
 			<h2 class="avg-rating">Average Rating</h2>
 			<div class="average-review-rating" data-score=<%= @average_review %>></div>
 			<span>Based on <%= @movie.reviews.count %> reviews</span>
