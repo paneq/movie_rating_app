@@ -20,6 +20,3 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-#Ignore Gmail login and password
-/config/secrets.yml
-/.env
