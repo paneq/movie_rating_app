@@ -3,5 +3,8 @@ Rails.application.routes.draw do
   resources :movies do
   	resources :reviews
   end
+  resources :categories do
+    resources :movies, only: [:index], controller: 'categories_movies'
+  end
   root "movies#index"
 end
