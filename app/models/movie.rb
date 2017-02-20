@@ -5,11 +5,11 @@ class Movie < ApplicationRecord
 	
 	validates :title, length: { maximum: 45,
     				 too_long: "%{count} characters is the maximum allowed" }, presence: true
-	validates :description, length: { maximum: 200,
+  validates :description, length: { maximum: 200,
 						 too_long: "%{count} characters is the maximum allowed" }, presence: true
 	validates :director, length: { maximum: 50,
     				 too_long: "%{count} characters is the maximum allowed" }, presence: true
-	validates :movie_length, length: { maximum: 250,
+  validates :movie_length, length: { maximum: 250,
     				 too_long: "%{count} is the maximum allowed" }, presence: true
 	
 	validates_numericality_of :movie_length, greater_than_or_equal_to: 0

@@ -1,11 +1,11 @@
 <%= simple_form_for @movie, :html => { :multipart => true } do |f| %>
-	<%= f.error_notification %>
+  <%= f.error_notification %>
   <%= f.association  :category, :prompt => "Select a category" %>
-	<%= f.input  :title, label: "Movie title" %>
-	<%= f.input  :description %>
-	<%= f.input  :director %>
-	<%= f.input  :movie_length %>
-	<%= f.input  :image %>
-	<%= f.button :submit, class: "btn-custom2" %>
-	<%= link_to "Cancel", root_path, class: "btn btn-default btn-custom2" %>
+  <%= f.input  :title, label: "Movie title" %>
+  <%= f.input  :description %>
+  <%= f.input  :director %>
+  <%= f.input  :movie_length %>
+  <%= f.input  :image %>
+  <%= f.button :submit, class: "btn-custom2" %>
+  <%= link_to "Cancel", root_path, class: "btn btn-default btn-custom2" %>
 <% end %>

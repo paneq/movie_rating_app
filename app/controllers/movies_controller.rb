@@ -59,4 +59,4 @@ class MoviesController < ApplicationController
 		def find_movie
 			@movie = Movie.find(params[:id])
 		end
-end
+	end
