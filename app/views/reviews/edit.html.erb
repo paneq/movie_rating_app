@@ -18,6 +18,7 @@
 	$('#rating-form').raty({
 		path: '/images/ratyrate',
 		scoreName: 'review[rating]',
-		number: 10
+		number: 10,
+		score: <%= @review.rating %>
 	});
 </script>
