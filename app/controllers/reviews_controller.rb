@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
 	def create
 		@review = current_user.reviews.build(review_params)
 		@review.movie_id = @movie.id
-		if params[:rating].blank?
+		if params[:review][:rating].blank?
 			@review.rating = 0
 		end
 
