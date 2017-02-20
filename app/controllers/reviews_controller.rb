@@ -10,6 +10,9 @@ class ReviewsController < ApplicationController
 	def create
 		@review = current_user.reviews.build(review_params)
 		@review.movie_id = @movie.id
+		if params[:rating].blank?
+			@review.rating = 0
+		end
 
 		if @review.save
 			redirect_to movie_path(@movie)
