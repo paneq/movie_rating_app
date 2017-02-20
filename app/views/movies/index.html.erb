@@ -7,7 +7,7 @@
 <div class="row">
 	<% @movies.each do |movie| %>
 	<div class="col-md-3">
-		<%= link_to image_tag(movie.image, class: "movie"), movie, class: "movie-index" %>
+		<%= link_to image_tag(movie.image.url(:medium), class: "movie"), movie, class: "movie-index" %>
 	</div>
 	<% end %>
 </di>
