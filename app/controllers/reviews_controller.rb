@@ -47,6 +47,10 @@ class ReviewsController < ApplicationController
 		end
 
 		def find_review
-			@review = Review.find(params[:id])
+			@review = current_user.reviews.find(params[:id]) || render_404
+		end
+
+		def render_404
+  		rescue ActiveRecord::RecordNotFound
 		end
 end
