@@ -43,6 +43,8 @@ group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
   gem 'rspec', '~> 3.5'
+  gem 'capybara', '~> 2.12', '>= 2.12.1'
+  gem 'database_cleaner'
 end
 
 group :development do
