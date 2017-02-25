@@ -42,9 +42,11 @@ group :development, :test do
   gem 'byebug', platform: :mri
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
-  gem 'rspec', '~> 3.5'
+  gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
   gem 'capybara', '~> 2.12', '>= 2.12.1'
   gem 'database_cleaner'
+  gem 'factory_girl_rails', '~> 4.8'
+  gem 'guard-rspec', '~> 4.7', '>= 4.7.3'
 end
 
 group :development do
