@@ -1,0 +1,12 @@
+<h1>Recent Activities</h1>
+
+<% @activities.each do |activity| %>
+  <div class="activity">
+    <% if activity.owner.name.nil? %>
+      <%= link_to "Unknown", '#' %>
+    <% else %>
+      <%= link_to activity.owner.name, '#' %>
+    <% end %>
+    <%= render_activity activity %>
+  </div>
+<% end %>
