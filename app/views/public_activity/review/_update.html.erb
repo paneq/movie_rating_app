@@ -1,0 +1,7 @@
+updated review
+
+<% if activity.trackable %>
+  on <%= link_to activity.trackable.movie.name, activity.trackable.movie %>
+<% else %>
+  which has since been removed
+<% end %>

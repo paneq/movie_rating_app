@@ -311,3 +311,18 @@ p.alert, p.notice {
   }
 
 }
+
+.activity {
+  border-bottom: solid 1px #CCC;
+  padding: 16px 0;
+  em {
+    color: #777;
+    font-size: 12px;
+    padding-left: 5px;
+  }
+}
+
+#activity-box {
+  width: 300px;
+  padding: 5px;
+}

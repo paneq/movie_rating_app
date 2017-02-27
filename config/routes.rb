@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'profile', to: 'users#show'
+  get 'profile/edit', to: 'users#edit'
+  resources :activities
   devise_for :users
   resources :movies do
   	resources :reviews

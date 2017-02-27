@@ -15,6 +15,7 @@ class ReviewsController < ApplicationController
 		end
 
 		if @review.save
+			@review.create_activity :create, owner: current_user
 			redirect_to movie_path(@movie)
 		else
 			render 'new'
@@ -34,6 +35,7 @@ class ReviewsController < ApplicationController
 
 	def destroy
 		@review.destroy
+		@review.create_activity :destroy, owner: current_user
 		redirect_to movie_path(@movie)
 	end
 
