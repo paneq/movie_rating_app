@@ -28,7 +28,7 @@ class MoviesController < ApplicationController
 	end
 
 	def edit
-		@categories = Category.all.map{ |c| [c.name, c.id] }
+		@movie_categories = CategoriesService.new.call
 	end
 
 	def update

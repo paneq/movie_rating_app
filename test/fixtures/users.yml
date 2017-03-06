@@ -6,6 +6,8 @@
 #
 one: 
   email: test1@test.com
+  password: password
+  confirmed_at: Date.today
 #
 two: 
   email: test2@test.com

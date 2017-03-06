@@ -1,11 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  description: MyText
-  movie_length: 1
+  category: "Horror"
+  title: "The Walking Dead"
+  description: "A group of survivors try to surive in the apocalyptic world ocerrun by zombies"
+  movie_length: 45
+  director: "Unknown"
+  image_file_name: File.open("#{Rails.root}/spec/support/The_Walking_Dead.jpg")
+  user_id: 1
 
-two:
-  title: MyString
-  description: MyText
-  movie_length: 1
+# two:
+#   title: MyString
+#   description: MyText
+#   movie_length: 1
