@@ -6,5 +6,5 @@ class Review < ApplicationRecord
   belongs_to :user
 
   validates :comment, presence: true
-  validates :rating, :inclusion => 1..10
+  validates :rating, :inclusion => 0..10
 end

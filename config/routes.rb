@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :activities
   devise_for :users
   resources :movies do
-  	resources :reviews
+  	resources :reviews, except: [:destroy]
   end
   resources :categories do
     resources :movies, only: [:index], controller: 'categories_movies'

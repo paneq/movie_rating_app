@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
 	before_action :find_movie
-	before_action :find_review, only: [:edit, :update, :destroy]
+	before_action :find_review, only: [:edit, :update]
 	before_action :authenticate_user!, only: [:new, :edit]
 	
 	def new
@@ -31,12 +31,6 @@ class ReviewsController < ApplicationController
 		else
 			render 'new'
 		end
-	end
-
-	def destroy
-		@review.destroy
-		@review.create_activity :destroy, owner: current_user
-		redirect_to movie_path(@movie)
 	end
 
 	private
