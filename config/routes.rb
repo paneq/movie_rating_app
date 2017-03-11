@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get 'profile/edit', to: 'users#edit'
   resources :activities
   devise_for :users
-  resources :movies do
+  post 'movies' => 'create_movie#create'
+  resources :movies, except: [:create] do
   	resources :reviews, except: [:destroy]
   end
   resources :categories do

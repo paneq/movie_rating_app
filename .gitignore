@@ -20,3 +20,5 @@
 # Ignore Byebug command history file.
 .byebug_history
 
+#Ignore all images saved locally
+/public/system/movies/images/*

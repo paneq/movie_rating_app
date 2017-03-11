@@ -4,7 +4,7 @@ class Movie < ApplicationRecord
 
 	belongs_to :user
 	belongs_to :category
-	has_many   :reviews
+	has_many   :reviews, dependent: :destroy
 	
 	validates :title, length: { maximum: 45,
     				 too_long: "%{count} characters is the maximum allowed" }, presence: true

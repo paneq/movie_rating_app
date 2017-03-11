@@ -18,14 +18,14 @@ class MoviesController < ApplicationController
 		@movie = current_user.movies.build
 	end
 
-	def create
-		@movie = current_user.movies.new(movie_params)
-		if @movie.save
-			redirect_to root_path
-		else
-			render 'new'
-		end
-	end
+	# def create
+	# 	@movie = current_user.movies.new(movie_params)
+	# 	if @movie.save
+	# 		redirect_to root_path
+	# 	else
+	# 		render 'new'
+	# 	end
+	# end
 
 	def edit
 		@movie_categories = Category.all.map{ |c| [c.name, c.id] }
