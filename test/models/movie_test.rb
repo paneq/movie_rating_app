@@ -1,15 +1,15 @@
 require 'test_helper'
 
 class MovieTest < ActiveSupport::TestCase
-	test "invalid without a title" do
-		m = Movie.new(title: nil)
-		assert !m.valid?, "Title is not being validated"
-	end
+  test "invalid without a title" do
+    m = Movie.new(title: nil)
+    assert !m.valid?, "Title is not being validated"
+  end
 
-	test "invalid without a description" do
-		m = Movie.new(title: "Rogue 1. Staw Wars", description: nil)
-		assert !m.valid?, "Description is not being validated"
-	end
+  test "invalid without a description" do
+    m = Movie.new(title: "Rogue 1. Staw Wars", description: nil)
+    assert !m.valid?, "Description is not being validated"
+  end
 
   test "invalid without movie_length" do
     m = Movie.new(title: "Rogue 1. Staw Wars", 
