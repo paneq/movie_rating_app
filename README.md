@@ -4,6 +4,6 @@
 
 * Rails version - Rails 5.0.1
 
-* Database creation - rails db:migrate
+* Database creation - rails db:setup
 
 * How to run the test suite
