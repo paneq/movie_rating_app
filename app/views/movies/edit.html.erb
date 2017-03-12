@@ -1,17 +1,17 @@
 <% provide(:title, 'Edit Film') %>
 
 <div class="col-md-6 col-md-offset-3">
-	<div class="edit-movie-form">
-		<h1>Edit Movie</h1>
-		<%= simple_form_for @movie, :html => { :multipart => true } do |f| %>
-			<%= f.select :category_id, @movie_categories %>
-			<%= f.input  :title, label: "Movie title" %>
-			<%= f.input  :description %>
-			<%= f.input  :director %>
-			<%= f.input  :movie_length %>
-			<%= f.input  :image %>
-			<%= f.button :submit, class: "btn-custom2" %>
-			<%= link_to "Cancel", movie_path(@movie), class: "btn btn-default btn-custom2" %>
-		<% end %>
-	</div>
+  <div class="edit-movie-form">
+    <h1>Edit Movie</h1>
+    <%= simple_form_for @movie, :html => { :multipart => true } do |f| %>
+      <%= f.select :category_id, @movie_categories %>
+      <%= f.input  :title, label: "Movie title" %>
+      <%= f.input  :description %>
+      <%= f.input  :director %>
+      <%= f.input  :movie_length %>
+      <%= f.input  :image %>
+      <%= f.button :submit, class: "btn-custom2" %>
+      <%= link_to "Cancel", movie_path(@movie), class: "btn btn-default btn-custom2" %>
+    <% end %>
+  </div>
 </div>
