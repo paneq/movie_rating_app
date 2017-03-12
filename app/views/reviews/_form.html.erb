@@ -1,19 +1,19 @@
 <%= simple_form_for([@movie, @review]) do |f| %>
-	<%= f.error_notification %>
-	<div id="rating-form">
-		<label>Rating</label>
-		<%= f.error :rating %>
-	</div>
-	<%= f.input  :comment %>
-	<%= f.button :submit, class: "btn-custom2" %>
-	<%= link_to "Cancel", movie_path(@movie), class: "btn btn-default btn-custom2" %>
+  <%= f.error_notification %>
+  <div id="rating-form">
+    <label>Rating</label>
+    <%= f.error :rating %>
+  </div>
+  <%= f.input  :comment %>
+  <%= f.button :submit, class: "btn-custom2" %>
+  <%= link_to "Cancel", movie_path(@movie), class: "btn btn-default btn-custom2" %>
 <% end %>
 
 <script>
-	$('#rating-form').raty({
-		path: '/images/ratyrate',
-		scoreName: 'review[rating]',
-		number: 10,
-		cancel: true
-	});
+  $('#rating-form').raty({
+    path: '/images/ratyrate',
+    scoreName: 'review[rating]',
+    number: 10,
+    cancel: true
+  });
 </script>

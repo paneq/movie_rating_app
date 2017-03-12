@@ -1,25 +1,25 @@
 <% provide(:title, 'Edit Review') %>
 
 <div class="col-md-6 col-md-offset-3">
-	<div class="edit-review-form">
-		<h1>Edit Review</h1>
-		<%= simple_form_for([@movie, @review]) do |f| %>
-			<div id="rating-form">
-				<label>Rating</label>
-			</div>
-			<%= f.input  :comment %>
-			<%= f.button :submit, class: "btn-custom2" %>
-			<%= link_to "Cancel", movie_path(@movie), class: "btn btn-default btn-custom2" %>
-		<% end %>
-	</div>
+  <div class="edit-review-form">
+    <h1>Edit Review</h1>
+    <%= simple_form_for([@movie, @review]) do |f| %>
+      <div id="rating-form">
+        <label>Rating</label>
+      </div>
+      <%= f.input  :comment %>
+      <%= f.button :submit, class: "btn-custom2" %>
+      <%= link_to "Cancel", movie_path(@movie), class: "btn btn-default btn-custom2" %>
+    <% end %>
+  </div>
 </div>
 
 <script>
-	$('#rating-form').raty({
-		path: '/images/ratyrate',
-		scoreName: 'review[rating]',
-		number: 10,
-		score: <%= @review.rating %>,
-		cancel: true
-	});
+  $('#rating-form').raty({
+    path: '/images/ratyrate',
+    scoreName: 'review[rating]',
+    number: 10,
+    score: <%= @review.rating %>,
+    cancel: true
+  });
 </script>
