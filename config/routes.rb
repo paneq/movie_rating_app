@@ -2,10 +2,8 @@ Rails.application.routes.draw do
   get 'sessions/new'
   resources :activities
   devise_for :users
-  post 'movies' => 'create_movie#create'
-  resources :movies, except: [:create] do
-    post 'reviews' => 'create_review#create'
-    resources :reviews, except: [:destroy, :create]
+  resources :movies do
+    resources :reviews, except: [:destroy]
   end
   resources :categories do
     resources :movies, only: [:index], controller: 'categories_movies'

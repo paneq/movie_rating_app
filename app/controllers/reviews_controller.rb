@@ -1,48 +1,46 @@
-class MoviesController < ApplicationController
-  before_action :find_movie, only: [:show, :edit, :update, :destroy]
+class ReviewsController < ApplicationController
+  before_action :find_movie
+  before_action :find_review, only: [:edit, :update]
   before_action :authenticate_user!, only: [:new, :edit]
-
-  def index
-    @movies = Movie.all.order("created_at DESC")
-  end
-
-  def show
-    if @movie.reviews.blank?
-      @average_review = 0
-    else
-      @average_review = @movie.reviews.average(:rating).round(2)
-    end
-  end
-
+   
   def new
-    @movie = current_user.movies.build
+    @review = Review.new
   end
 
-  def edit
-    @movie_categories = Category.all.map{ |c| [c.name, c.id] }
-  end
-
-  def update
-    @movie.category_id = params[:category_id]
-    if @movie.update(movie_params)
+  def create
+    if CreateReviewService.new.call(review_params, current_user)
+      @review.create_activity :create, owner: current_user
       redirect_to movie_path(@movie)
     else
-      render 'edit'
+      render 'new'
     end
   end
-
-  def destroy
-    @movie.destroy
-    redirect_to root_path
+ 
+  def edit
   end
-
+ 
+  def update
+    if @review.update(review_params)
+      redirect_to movie_path(@movie)
+    else
+      render 'new'
+    end
+  end
+ 
   private
-    def movie_params
-      params.require(:movie).permit(:title, :description,
-            :movie_length, :director, :image, :category_id)
+    def review_params
+      params.require(:review).permit(:rating, :comment)   
     end
-
+ 
     def find_movie
-      @movie = Movie.find(params[:id])
+      @movie = Movie.find(params[:movie_id])
     end
-  end
+ 
+    def find_review
+      @review = current_user.reviews.find(params[:id]) || render_404
+    end
+ 
+    def render_404
+      rescue ActiveRecord::RecordNotFound
+    end
+end 

@@ -18,6 +18,14 @@ class MoviesController < ApplicationController
     @movie = current_user.movies.build
   end
 
+  def create
+    if CreateMovieService.new.call(movie_params, current_user)
+      redirect_to root_path
+    else
+      render 'movies/new'
+    end
+  end
+
   def edit
     @movie_categories = Category.all.map{ |c| [c.name, c.id] }
   end
