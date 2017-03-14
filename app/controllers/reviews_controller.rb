@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    if CreateReviewService.new.call(review_params, current_user)
+    if @review = CreateReviewService.new.call(params[:movie_id], review_params, current_user)
       @review.create_activity :create, owner: current_user
       redirect_to movie_path(@movie)
     else

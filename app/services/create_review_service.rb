@@ -1,17 +1,18 @@
-class CreateReviewService < ApplicationController
-  before_action :find_movie
+class CreateReviewService
 
-  def call(review_attributes, user)
-    @review = user.reviews.build(review_attributes)
-    @review.movie_id = @movie.id
-    if params[:review][:rating].blank?
-      @review.rating = 0
+  def call(movie_id, attributes, user)
+    review = user.reviews.build(attributes)
+    movie = Movie.find(movie_id)
+    review.movie = movie
+    if attributes[:rating].blank?
+      review.rating = 0
     end
+    review.save
+    return review
   end
 
   private
-    def find_movie
-      @movie = Movie.find(params[:id])
+    def find_movie(attributes)
+      Movie.find(attributes[:id])
     end
-
 end
