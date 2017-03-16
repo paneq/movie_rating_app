@@ -4,5 +4,4 @@ rvm:
 
 script: 
   - bundle exec rake db:environment:set db:setup
-  - bundle exec rake db:migrate
   - bundle exec rake spec
