@@ -8,7 +8,7 @@ end
 
 FactoryGirl.define do
   factory :movie do
-    category Category.first
+    category { Category.first }
     title "The Walking Dead"
     description "A group of survivors try to survive in the apocalyptic world overrun by zombies"
     director "Unknown"
